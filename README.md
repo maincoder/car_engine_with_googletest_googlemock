@@ -1,7 +1,7 @@
 car_engine_with_googletest_googlemock
 =====================================
 
-demo for usage of googletest and googlemock, in the way of building car with fake engine
+demo for usage of googletest and googlemock, in the way of building car with mock engine
 
 implementation in .h file is bad habit for c/c++ programmers
 
