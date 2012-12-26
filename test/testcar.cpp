@@ -67,13 +67,16 @@ TEST_F(TestCar, StartAndStopTheCar)
 TEST_F(TestCar, DriverSwitchTheGear)
 {
 	EXPECT_CALL(*mockEngine, setGearOrder(Le(GearMAX)))
-			.Times(1)
+			.Times(AtLeast(1))
 			.WillRepeatedly(ReturnArg<0>());
 	unsigned int presetGearOrder = 1;
 	car->startEngine();
 	car->switchGear(presetGearOrder);
 	EXPECT_EQ(presetGearOrder, car->getGearOrder());
 	car->stopEngine();
+
+	car->switchGear(presetGearOrder);
+	EXPECT_NE(presetGearOrder, car->getGearOrder());
 }
 
 

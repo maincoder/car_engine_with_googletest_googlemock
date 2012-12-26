@@ -17,6 +17,8 @@ public:
 	{
 		engine = engineIn;
 		engine->stop();
+		engineStarted=false;
+		gearOrder=-1;
 	}
 
 	void startEngine()
@@ -28,6 +30,7 @@ public:
 		else
 		{
 			engineStarted=engine->start();
+			engineStarted=true;
 		}
 	}
 
@@ -57,7 +60,7 @@ public:
 		}
 		else
 		{
-			return;
+			gearOrder = -1;
 		}
 	}
 
